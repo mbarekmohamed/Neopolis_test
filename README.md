@@ -1,6 +1,6 @@
 # Test Neopolis Dev 
 ## Backend : 
-#### Database : flask
+#### Framework : flask
 
 ## Frontend :
 #### HTML / CSS
