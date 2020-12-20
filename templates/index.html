@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+    <style>
+h1 {
+  display: block;text-align: center;
+  font-size: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+</style>
+</head>
+
+<body style="background: lightgray;">
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card" style="margin-left: 200px;margin-right: 200px">
+        <div class=" card-header">
+          <h1 class=" card-title"><B>Real Estate Price Prediction</B></h1>
+        </div>
+        <div class=" card-body" style="padding-left: 50px;padding-right: 50px;">
+<form action="{{ url_for('predict')}}" method="POST" >
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Surface Batie</label>
+        <input type="text" class="form-control"  name="surface" placeholder="en m²" required="required">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Nbr des pièces principales avec salon</label>
+        <input type="text" class="form-control"  name="nbr" placeholder="" required="required">
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Latitude</label>
+        <input type="text" class="form-control"  name="lat" placeholder="exp : 43.506405" required="required">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Longitude</label>
+        <input type="text" class="form-control"  name="long" placeholder="exp : 5.506405" required="required">
+        </div>
+    </div><br>
+
+  <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-right: 50px;">Validate</button>
+
+</form><br><br>
+          <h5 style="text-align: center">{{ prediction_text }}</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
